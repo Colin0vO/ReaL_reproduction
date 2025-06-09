@@ -114,9 +114,7 @@ Running detectors: 100%|██████████████████�
       …
       
     }
-    
   ]
-  
 }
 
 Wrote 27 entries to paired.json
