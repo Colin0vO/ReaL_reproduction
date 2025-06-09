@@ -53,12 +53,19 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 
 A sample output of functionality is 
 "index": 0,
+
       "issues": [
+      
         {
+        
           "line": 19,
+          
           "description": "CWE-915: Uncontrolled modification of object attributes detected. Updates to objects should be limited to an allow-list of fields (e.g., using 'if field in EDITABLE_FIELDS' checks).",
+          
           "severity": "High"
+          
         }
+        
       ]
       
 Showing one possible problem in the static check.
@@ -66,7 +73,9 @@ Showing one possible problem in the static check.
 A sample output of quality is
 
 --- 5 ---
-NO, the script does not correctly implement the prompt. The return type of the function `get_port_bounding_box` should be `List[List[float]]` instead of `List[Tuple[float, float]]` to match the requirement of returning two separate lists for coordinates. 
+NO, the script does not correctly implement the prompt. 
+
+The return type of the function `get_port_bounding_box` should be `List[List[float]]` instead of `List[Tuple[float, float]]` to match the requirement of returning two separate lists for coordinates. 
 
 Showing why the program doesn't meet the instructional requirement.
 
