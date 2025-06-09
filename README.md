@@ -37,13 +37,13 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 1. **Functionality**
 
    * Tool: `detectoreval.py`
-   * Result: 21/27 tasks passed → **77.7 % accuracy**
+   * Result: 21/27 tasks passed → **77.78 % accuracy**
    * Detailed results are in `detect_results.json`.
 
 2. **Quality**
 
    * Tool: `llm_judge_ability_test.py`
-   * Result: 22/27 tasks passed → **81.5 % accuracy**
+   * Result: 22/27 tasks passed → **81.48 % accuracy**
    * Raw judgments are in `llm_judge_result.txt`.
 
 ---
@@ -89,10 +89,32 @@ To reproduce our results:
    * Execute `detectoreval.py` (outputs `detect_results.json`)
    * Execute `llm_judge_ability_test.py` (outputs `llm_judge_result.txt`)
 
-After completion, inspect `detect_results.json` for functionality accuracy and `llm_judge_result.txt` for quality judgments.
+After completion, inspect ur terminals so that u can see accuracy.
+
+A sample output is:
+root@rfa-deploy-66df545575-nrzj9:/mnt/data/base_clone/ReaL_reproduction# bash run.bash
+Converted 27 scripts → responses.json
+Running detectors: 100%|████████████████████████████████████████████████████████████████| 27/27 [00:00<00:00, 236.20it/s]
+
+{
+  "pass_count": 21,
+  "total": 27,
+  "pass_rate": 77.78,
+  "details": [
+    {
+      …
+    }
+  ]
+}
+Wrote 27 entries to paired.json
+Total checks:       27
+YES count:          22
+NO count:           5
+Percentage of YES:  81.48%
+
 
 ---
 
 ## License & Contributions
 
-Feel free to open issues or pull requests for questions, bug fixes, or feature improvements. All contributions are welcome!
+Feel free to contact me at zhw106@ucsd.edu if u meet difficulties in setting up.
