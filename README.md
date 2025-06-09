@@ -116,7 +116,7 @@ To reproduce our results:
    * Execute `detectoreval.py` (outputs `detect_results.json`)
    * Execute `llm_judge_ability_test.py` (outputs `llm_judge_result.txt`)
 
-After completion, inspect ur terminals so that u can see accuracy.
+After completion, inspect your terminals so that you can see the accuracy report on the two tasks.
 
 A sample output is:
 ```bash
