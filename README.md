@@ -89,12 +89,11 @@ To reproduce our results:
 4. **Run the full evaluation**
 
    ```bash
-   bash run_all.sh
+   bash run.bash
    ```
 
    This script will:
 
-   * Generate OpenROAD scripts for all prompts
    * Execute `detectoreval.py` (outputs `detect_results.json`)
    * Execute `llm_judge_ability_test.py` (outputs `llm_judge_result.txt`)
 
