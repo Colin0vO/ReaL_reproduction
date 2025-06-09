@@ -28,7 +28,7 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 ## Notices
 
 * You may see warnings when running OpenROAD scripts. These arise because we do not supply full chip‑ and process‑design files (our focus is on EDA functionality, not physical design).
-* Our training corpus similarly omits full context; it emphasizes script functionality over complete design flows.
+* Our training corpus, extracted from [EDA Corpus](https://github.com/OpenROAD-Assistant/EDA-Corpus) have similar issue; it emphasizes script functionality over complete design flows.
 
 ---
 ## Evaluation
@@ -48,7 +48,7 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 3. **SecCodePLT+ Func.-Qual.**
 
    * You need to manually check by scanning `detect_results.json` and `llm_judge_result.txt`
-   * index 0 in `detect_results.json` is for problem id 1 in `llm_judge_result.txt`
+   * index 0 in `detect_results.json` is for first one in `llm_judge_result.txt` (index i corrsponding to i + 1)
    * Result: 16/27 tasks passed → **59.26 % accuracy**
 
 A sample output of functionality is 
