@@ -1,6 +1,6 @@
 # ReaL Reproduction
 
-This repository contains the code and artifacts needed to reproduce the results of **Project ReaL** on EDA tasks.
+This is a GPU-friendly, easier reproduction repo for the viewer to reproduce our [ReaL on EDA](https://github.com/airevo2/ReaL_ON_EDA/tree/main?tab=readme-ov-file) result. 
 
 ---
 
