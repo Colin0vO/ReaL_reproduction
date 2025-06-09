@@ -22,7 +22,10 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 * **`exported_scripts/`**
   A folder containing the model’s generated OpenROAD scripts.
   All scripts have been verified to run in the OpenROAD Docker environment (see ECE240 Lab 6).
-
+  
+## EDA Dataset
+   `paired.json` is EDA Model Output for evaluation. 
+   
 ---
 
 ## Notices
@@ -33,19 +36,19 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 ---
 ## Evaluation
 
-1. **SecCodePLT + Functionality**
+1. **EDA Model Output + Functionality**
 
    * Tool: `detectoreval.py`
    * Result: 21/27 tasks passed → **77.78 % accuracy**
    * Detailed results are in `detect_results.json`.
 
-2. **SecCodePLT + Quality**
+2. **EDA Model Outputt + Quality**
 
    * Tool: `llm_judge_ability_test.py`
    * Result: 22/27 tasks passed → **81.48 % accuracy**
    * Raw judgments are in `llm_judge_result.txt`.
      
-3. **SecCodePLT+ Func.-Qual.**
+3. **EDA Model Output + Func.-Qual.**
 
    * You need to manually check by scanning `detect_results.json` and `llm_judge_result.txt`
    * index 0 in `detect_results.json` is for first one in `llm_judge_result.txt` (index i corrsponding to i + 1)
