@@ -1,0 +1,74 @@
+--- 1 ---
+YES, the script correctly implements the prompt by defining a function that retrieves instances and their respective regions, while skipping instances that start with the specified prefix "FILLER". It uses the OpenROAD API to access the design and extract the necessary information. 
+
+--- 2 ---
+YES, the script correctly implements the prompt by defining a function that retrieves and returns a list of all module names in the current design using the OpenROAD API. 
+
+--- 3 ---
+YES, the script correctly implements the prompt by defining a function that gathers all instance pins with a rising arrival time greater than 0.5 seconds and returns them as a list. 
+
+--- 4 ---
+YES, the script correctly implements the prompt by defining a function that retrieves the capacitance coupling adjust factor for each net in the design and returns them as a list. 
+
+--- 5 ---
+YES, the script correctly implements the prompt by defining a function that retrieves the bounding box of a specified port and returns the coordinates in the required format. 
+
+--- 6 ---
+YES, the script correctly implements the prompt by defining a function that sets the capacitance coupling calibration factor for the specified net "req_msg[11]" to 2. The function is called without arguments, which defaults to the specified net name and factor. 
+
+--- 7 ---
+YES, the script correctly implements the prompt by defining a function that retrieves all nets in the design block that are wild-connected, using the `isWildConnected()` method. 
+
+--- 8 ---
+YES, the script correctly implements the prompt. It checks all the nets in the design block and returns True if any net has an altered wire, which aligns with the requirement to identify if any wire has been replaced. 
+
+--- 9 ---
+YES, the script correctly implements the prompt. It reads the technology layers from the LEF file and retrieves the AREA parameter for each layer, returning a dictionary with layer names as keys and their corresponding AREA values. 
+
+--- 10 ---
+YES, the script correctly implements the prompt by defining a function `get_cc_segments()` that retrieves all capacitor-coupled segments from the current design block using the method `getCCSegs()`. 
+
+--- 11 ---
+YES, the script correctly implements the prompt by defining a function that sets the corner avoidance parameter for the IO pin placer to 50 and retrieves the vertical thickness multiplier. 
+
+--- 12 ---
+NO, the script only inverts the rotation of the instances but does not change their location. To fully implement the prompt, both the rotation and the location need to be inverted. 
+
+--- 13 ---
+YES, the script correctly implements the prompt. It sets up the technology and design, retrieves the layer named 'via8', and then fetches the forbidden spacing rules for that layer, which aligns with the requirements stated in the prompt. 
+
+--- 14 ---
+NO, the script does not correctly implement the prompt. The method `port.getBPins()` is not a standard method for retrieving pins associated with a port; it should likely be `port.getPins()` or a similar method that correctly retrieves the pins for each port. 
+
+--- 15 ---
+YES, the script correctly implements the prompt. It sets up the technology and design, retrieves the layer named 'metal1', and then fetches the minimum cut rules for that layer, which aligns with the requirements stated in the prompt. 
+
+--- 16 ---
+YES, the script correctly implements the prompt by defining a function that retrieves the total number of vias from the technology and prints the result. 
+
+--- 17 ---
+YES, the script correctly implements the prompt by defining a function that retrieves all resistor segments from the current design block using the appropriate methods from the OpenROAD API. 
+
+--- 18 ---
+YES, the script correctly implements the prompt by defining a function `get_clearance_measure()` that retrieves the clearance measure from the technology associated with the design. It then invokes this function and prints the result, which aligns with the goal of getting the measure system. 
+
+--- 19 ---
+YES, the script correctly implements the prompt by finding the instance named 'input2' and setting its location to the specified coordinates (22500, 33459). 
+
+--- 20 ---
+YES, the script correctly implements the prompt. It retrieves the instance '_411_', gets its transformation, sets the orientation to 'MX', and applies the transformation back to the instance. 
+
+--- 21 ---
+YES, the script correctly implements the prompt by defining a function `reset_tapcell()` that retrieves the tapcell from the design and calls the `reset()` method on it, which aligns with the requirement to reset the tapcell in the design. 
+
+--- 22 ---
+YES, the script correctly implements the prompt by defining a function that retrieves the number of database units per micron for the current design, which is necessary to convert 1 um to the appropriate units used in the technology. 
+
+--- 23 ---
+NO. 
+
+The script does not include a function or code to get the count of manufacturing grid, which is part of the prompt. It only implements the functionality to set the capacitance coupling adjust order for the specified net. 
+
+--- 24 ---
+YES, the script correctly implements the prompt by defining a function that retrieves all via definitions from the technology using the OpenROAD API. It reads the necessary technology and design files, and the function `get_technology_vias` returns the vias as intended. 
+

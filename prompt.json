@@ -1,0 +1,102 @@
+[
+  {
+    "problem_id": 1,
+    "prompt": "get the instances and their respective regions"
+  },
+  {
+    "problem_id": 2,
+    "prompt": "Get all the modules and return the names of modules as a list"
+  },
+  {
+    "problem_id": 3,
+    "prompt": "Get all the pins which has the rising arrival time greater than 0.5 sec and return them as list"
+  },
+  {
+    "problem_id": 4,
+    "prompt": "Get the capacitance coupling Adjust Factor of every net and return them as a list."
+  },
+  {
+    "problem_id": 5,
+    "prompt": "Get the Bounding Box of a port named \"req_val\". Return a list of coordinates (Xmin, Ymin in one list and Xmax, Ymax in another list)"
+  },
+  {
+    "problem_id": 6,
+    "prompt": "Set the capacitance coupling calibration factor of the net with name \"req_msg[11]\" to 2"
+  },
+  {
+    "problem_id": 7,
+    "prompt": "Get the nets connected using a wild-card."
+  },
+  {
+    "problem_id": 8,
+    "prompt": "Check all the nets and check if any of its wires is replaced with a new wire. Return True if Altered and false otherwise"
+  },
+  {
+    "problem_id": 9,
+    "prompt": "Get the AREA parameter of the technology layers with their name. Return a dictionary with key as the layer name and value as the AREA parameter"
+  },
+  {
+    "problem_id": 10,
+    "prompt": "retrieve the capacitor-coupled segments"
+  },
+  {
+    "problem_id": 11,
+    "prompt": "get the vertical thickness multiplier for the IO pin placer's parameters and set corner avoidance to 50"
+  },
+  {
+    "problem_id": 12,
+    "prompt": "Invert the rotation and the location of instances with the library cell type 'NAND2_X1'"
+  },
+  {
+    "problem_id": 13,
+    "prompt": "Get the forbidden spacing rules of the technology layer with name 'via8'"
+  },
+  {
+    "problem_id": 14,
+    "prompt": "Get all the design block pins objects of ports and return a dictionay with port name as key and pins of the port as Value of the dictionary"
+  },
+  {
+    "problem_id": 15,
+    "prompt": "Get the minimum cut rules of the technology layer with name 'metal1'"
+  },
+  {
+    "problem_id": 16,
+    "prompt": "Get the number of vias in this technolgy."
+  },
+  {
+    "problem_id": 17,
+    "prompt": "get the resistor segments of the design block"
+  },
+  {
+    "problem_id": 18,
+    "prompt": "get the measure system"
+  },
+  {
+    "problem_id": 19,
+    "prompt": "Set the location of the instance named 'input2' to coordinates (22500, 33459)."
+  },
+  {
+    "problem_id": 20,
+    "prompt": "Set the rotation of the instance '_411_' to 'MX'"
+  },
+  {
+    "problem_id": 21,
+    "prompt": "reset the tapcell in the design"
+  },
+  {
+    "problem_id": 22,
+    "prompt": "Convert 1 um to units used in this technology in OpenROAD"
+  },
+  {
+    "problem_id": 23,
+    "prompt": "Get the count of manufacturing grid and set the capacitance Coupling Adjust Order of the net with name \"req_msg[13]\" to 1."
+  },
+  {
+    "problem_id": 24,
+    "prompt": "Get the technolgy vias"
+  },
+  {
+    "problem_id": 25,
+    "prompt": "List all the instances name"
+  }
+]

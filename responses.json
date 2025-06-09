@@ -1,0 +1,98 @@
+[
+  {
+    "problem_id": "script_1",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Dict, Any\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_instances_and_regions(skip_prefix: str = \"FILLER\") -> Dict[str, Any]:\n    \"\"\"\n    Return a mapping from each non‑filler instance name to its region,\n    suppressing spurious filler‑cell warnings.\n    \"\"\"\n    block = design.getBlock()\n    inst_regions: Dict[str, Any] = {}\n    for inst in block.getInsts():\n        name = inst.getName()\n        if name.startswith(skip_prefix):\n            continue\n        inst_regions[name] = inst.getRegion()\n    return inst_regions\n\ninstances_and_regions = get_instances_and_regions()\nprint(instances_and_regions)\n```"
+  },
+  {
+    "problem_id": "script_10",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Any, List\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_cc_segments() -> List[Any]:\n    \"\"\"\n    Return all capacitor‑coupled segments in the current design block.\n    \"\"\"\n    block = design.getBlock()\n    return block.getCCSegs()\n\ncc_segments = get_cc_segments()\nprint(cc_segments)\n```"
+  },
+  {
+    "problem_id": "script_11",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Any\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_iop_vertical_thickness(corner_avoidance: int = 50) -> Any:\n    \"\"\"\n    Configure the IO pin placer’s corner avoidance and return the vertical thickness multiplier.\n    \"\"\"\n    iop    = design.getIOPlacer()\n    params = iop.getParameters()\n    params.setCornerAvoidance(corner_avoidance)\n    return params.getVerticalThicknessMultiplier()\n\nvertical_thickness = get_iop_vertical_thickness()\nprint(vertical_thickness)\n```"
+  },
+  {
+    "problem_id": "script_12",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. invert NAND2_X1 instances -----\nblock = design.getBlock()\nfor inst in block.getInsts():\n    if inst.getMaster().getName() == \"NAND2_X1\":\n        tf = inst.getTransform()\n        tf.invert()\n        inst.setTransform(tf)\n```"
+  },
+  {
+    "problem_id": "script_13",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Any, List\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. retrieve forbidden spacing rules for via8 -----\nblock = design.getBlock()\ntech_obj = block.getTech()\nlayer = tech_obj.findLayer(\"via8\")\nforbidden_rules: List[Any] = layer.getTechLayerForbiddenSpacingRules()\n\nprint(forbidden_rules)\n```"
+  },
+  {
+    "problem_id": "script_14",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Dict, Any\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. collect port → pin mappings -----\nblock = design.getBlock()\nports = block.getBTerms()\n\nport_pin_map: Dict[str, Any] = {\n    port.getName(): port.getBPins()\n    for port in ports\n}\n\nprint(port_pin_map)\n```"
+  },
+  {
+    "problem_id": "script_15",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Any, List\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. retrieve min‑cut rules for metal1 -----\nblock = design.getBlock()\nlayer = block.getTech().findLayer(\"metal1\")\nmin_cut_rules: List[Any] = layer.getTechLayerMinCutRules()\n\nprint(min_cut_rules)\n```"
+  },
+  {
+    "problem_id": "script_16",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import int\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_via_count() -> int:\n    \"\"\"\n    Return the total number of vias defined in the technology.\n    \"\"\"\n    block = design.getBlock()\n    return block.getTech().getViaCount()\n\nvia_count = get_via_count()\nprint(via_count)\n```"
+  },
+  {
+    "problem_id": "script_17",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Any, List\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_resistor_segments() -> List[Any]:\n    \"\"\"\n    Return all resistor segments in the current design block.\n    \"\"\"\n    return design.getBlock().getRSegs()\n\nr_segments = get_resistor_segments()\nprint(r_segments)\n```"
+  },
+  {
+    "problem_id": "script_18",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import float\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_clearance_measure() -> float:\n    \"\"\"\n    Return the clearance measure defined in the technology.\n    \"\"\"\n    return design.getBlock().getTech().getClearanceMeasure()\n\n# ----- 2. invoke -----\nclearance_measure = get_clearance_measure()\nprint(clearance_measure)\n```"
+  },
+  {
+    "problem_id": "script_19",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. reposition instance -----\nblock = design.getBlock()\ninst  = block.findInst(\"input2\")\nif inst is None:\n    raise ValueError(\"Instance 'input2' not found\")\ninst.setLocation(22500, 33459)\n```"
+  },
+  {
+    "problem_id": "script_2",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import List\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_module_names() -> List[str]:\n    \"\"\"\n    Return a list of all module names in the current design.\n    \"\"\"\n    block = design.getBlock()\n    return [mod.getName() for mod in block.getModules()]\n\nmodule_names_list = get_module_names()\nprint(module_names_list)\n```"
+  },
+  {
+    "problem_id": "script_20",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. set instance orientation -----\nblock = design.getBlock()\ninst  = block.findInst(\"_411_\")\nif inst is None:\n    raise ValueError(\"Instance '_411_' not found\")\n\ntf = inst.getTransform()\ntf.setOrient(\"MX\")\ninst.setTransform(tf)\n```"
+  },
+  {
+    "problem_id": "script_21",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. reset tapcell -----\ndef reset_tapcell() -> None:\n    \"\"\"\n    Reset the tapcell in the design.\n    \"\"\"\n    tapcell = design.getTapcell()\n    tapcell.reset()\n\nreset_tapcell()\n```"
+  },
+  {
+    "problem_id": "script_22",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import int\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_db_units_per_micron() -> int:\n    \"\"\"\n    Return the number of database units per micron for the current design.\n    \"\"\"\n    block = design.getBlock()\n    return block.getDbUnitsPerMicron()\n\n# ----- 2. invoke -----\ndb_units_per_micron = get_db_units_per_micron()\nprint(db_units_per_micron)\n```"
+  },
+  {
+    "problem_id": "script_23",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef set_net_cc_adjust_order(net_name: str = \"req_msg[13]\", order: int = 1) -> None:\n    \"\"\"\n    Locate the specified net and set its capacitance coupling adjust order.\n    \"\"\"\n    block = design.getBlock()\n    net = block.findNet(net_name)\n    if net is None:\n        raise ValueError(f\"Net '{net_name}' not found\")\n    net.setCcAdjustOrder(order)\n\n# ----- 2. apply adjustment -----\nset_net_cc_adjust_order()\n```"
+  },
+  {
+    "problem_id": "script_24",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import List, Any\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_technology_vias() -> List[Any]:\n    \"\"\"\n    Return all via definitions (including non-default-rule vias) from the technology.\n    \"\"\"\n    block = design.getBlock()\n    tech_obj = block.getTech()\n    return tech_obj.getVias()\n\nvias = get_technology_vias()\nprint(vias)\n```"
+  },
+  {
+    "problem_id": "script_3",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design, get_timing\nfrom typing import List, Any\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\n# ----- 2. gather pins with arrival > 0.5 -----\nblock  = design.getBlock()\ntiming = get_timing()\n\ndef get_slow_pins(threshold: float = 0.5) -> List[Any]:\n    \"\"\"\n    Return all instance pins whose rise arrival exceeds the given threshold.\n    \"\"\"\n    return [\n        pin\n        for inst in block.getInsts()\n        for pin in inst.getITerms()\n        if not design.isInSupply(pin)\n        and timing.getPinArrival(pin, timing.Rise) > threshold\n    ]\n\nslow_pins = get_slow_pins()\nprint(slow_pins)\n```"
+  },
+  {
+    "problem_id": "script_4",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import List\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_net_cc_adjust_factors() -> List[float]:\n    \"\"\"\n    Return the capacitance coupling adjust factor for each net in the design.\n    \"\"\"\n    block = design.getBlock()\n    return [net.getCcAdjustFactor() for net in block.getNets()]\n\nnet_adjust_factors = get_net_cc_adjust_factors()\nprint(net_adjust_factors)\n```"
+  },
+  {
+    "problem_id": "script_5",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import List, Tuple\n\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_port_bounding_box(port_name: str = \"req_val\") -> List[Tuple[float, float]]:\n    \"\"\"\n    Return the bounding box of the given port as [(xmin, ymin), (xmax, ymax)].\n    \"\"\"\n    block = design.getBlock()\n    port  = block.findBTerm(port_name)\n    bbox  = port.getBBox()\n    return [\n        (bbox.xMin(), bbox.yMin()),\n        (bbox.xMax(), bbox.yMax())\n    ]\n\nbounding_box = get_port_bounding_box()\nprint(bounding_box)\n```"
+  },
+  {
+    "problem_id": "script_6",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Optional\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef calibrate_net_cc(net_name: str = \"req_msg[11]\", factor: float = 2.0) -> None:\n    \"\"\"\n    Set the capacitance coupling calibration factor for the specified net.\n    \"\"\"\n    block = design.getBlock()\n    net = block.findNet(net_name)\n    if net is None:\n        raise ValueError(f\"Net '{net_name}' not found in block\")\n    net.setCcCalibFactor(factor)\n\n# ----- 2. calibrate the net -----\ncalibrate_net_cc()\n```"
+  },
+  {
+    "problem_id": "script_7",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import List, Any\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_wild_connected_nets() -> List[Any]:\n    \"\"\"\n    Return all nets in the design block that are wild-connected.\n    \"\"\"\n    return [\n        net\n        for net in design.getBlock().getNets()\n        if net.isWildConnected()\n    ]\n\nwild_connected_nets = get_wild_connected_nets()\nprint(wild_connected_nets)\n```"
+  },
+  {
+    "problem_id": "script_8",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Any\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef check_if_any_wire_altered() -> bool:\n    \"\"\"\n    Return True if any net in the design block has an altered wire.\n    \"\"\"\n    return any(\n        net.isWireAltered()\n        for net in design.getBlock().getNets()\n    )\n\nis_wire_altered = check_if_any_wire_altered()\nprint(is_wire_altered)\n```"
+  },
+  {
+    "problem_id": "script_9",
+    "response": "```python\n#!/usr/bin/env openroad -python\nfrom openroad import Tech, Design\nfrom typing import Dict\n\n# ----- 1. setup -----\ntech = Tech()\ntech.readLef(\"process.lef\")\n\ndesign = Design(tech)\ndesign.readDef(\"chip.def\")\n\ndef get_layer_areas() -> Dict[str, float]:\n    \"\"\"\n    Return a mapping from each technology layer name to its area parameter.\n    \"\"\"\n    tech_obj = design.getBlock().getTech()\n    return {layer.getName(): layer.getArea() for layer in tech_obj.getLayers()}\n\nlayer_areas = get_layer_areas()\nprint(layer_areas)\n```"
+  }
+]
