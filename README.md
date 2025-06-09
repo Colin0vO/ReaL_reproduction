@@ -69,8 +69,8 @@ A sample output of quality is
 --- 5 ---
 NO, the script does not correctly implement the prompt. 
 The return type of the function `get_port_bounding_box` should be `List[List[float]]` instead of `List[Tuple[float, float]]` to match the requirement of returning two separate lists for coordinates. 
-Showing why the program doesn't meet the instructional requirement.
 ```
+Showing why the program doesn't meet the instructional requirement.
 
 
 ---
