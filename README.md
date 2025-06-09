@@ -1,6 +1,6 @@
 # ReaL Reproduction
 
-This repository contains the code and artifacts needed to reproduce the results of **Project ReaL** on EDA automation tasks.
+This repository contains the code and artifacts needed to reproduce the results of **Project ReaL** on EDA tasks.
 
 ---
 
@@ -34,17 +34,22 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 
 ## Evaluation
 
-1. **Functionality**
+1. **SecCodePLT + Functionalit**
 
    * Tool: `detectoreval.py`
    * Result: 21/27 tasks passed → **77.78 % accuracy**
    * Detailed results are in `detect_results.json`.
 
-2. **Quality**
+2. **SecCodePLT + Quality**
 
    * Tool: `llm_judge_ability_test.py`
    * Result: 22/27 tasks passed → **81.48 % accuracy**
    * Raw judgments are in `llm_judge_result.txt`.
+     
+3. **SecCodePLT+ Func.-Qual.**
+
+   * You need to manually check by scanning `detect_results.json` and `llm_judge_result.txt`
+   * Result: 16/27 tasks passed → **59.26 % accuracy**
 
 ---
 
