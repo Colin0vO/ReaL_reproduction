@@ -96,6 +96,7 @@ root@rfa-deploy-66df545575-nrzj9:/mnt/data/base_clone/ReaL_reproduction# bash ru
 Converted 27 scripts → responses.json
 Running detectors: 100%|████████████████████████████████████████████████████████████████| 27/27 [00:00<00:00, 236.20it/s]
 
+
 {
   "pass_count": 21,
   "total": 27,
@@ -106,10 +107,15 @@ Running detectors: 100%|██████████████████�
     }
   ]
 }
+
 Wrote 27 entries to paired.json
+
 Total checks:       27
+
 YES count:          22
+
 NO count:           5
+
 Percentage of YES:  81.48%
 
 
