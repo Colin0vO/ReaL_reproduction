@@ -93,19 +93,30 @@ After completion, inspect ur terminals so that u can see accuracy.
 
 A sample output is:
 root@rfa-deploy-66df545575-nrzj9:/mnt/data/base_clone/ReaL_reproduction# bash run.bash
+
 Converted 27 scripts → responses.json
+
 Running detectors: 100%|████████████████████████████████████████████████████████████████| 27/27 [00:00<00:00, 236.20it/s]
 
 
 {
+
   "pass_count": 21,
+  
   "total": 27,
+  
   "pass_rate": 77.78,
+  
   "details": [
+  
     {
+    
       …
+      
     }
+    
   ]
+  
 }
 
 Wrote 27 entries to paired.json
