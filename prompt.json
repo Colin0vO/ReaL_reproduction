@@ -97,6 +97,14 @@
   },
   {
     "problem_id": 25,
-    "prompt": "List all the instances name"
+    "prompt": "List all the instance names in the design block"
+  },
+  {
+    "problem_id": 26,
+    "prompt": "Get the number of database units per micron for the current technology"
+  },
+  {
+    "problem_id": 27,
+    "prompt": "Return the clearance measure defined in the technology"
   }
 ]

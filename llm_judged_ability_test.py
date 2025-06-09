@@ -20,7 +20,7 @@ def load_pairs(pairs_json: str) -> List[Dict[str, Any]]:
 
 def verify_alignment(prompt: str, code: str, client: OpenAI, model: str = "gpt-4o-mini") -> str:
     system = (
-        f"You are {JUDGE_NAME}, an EDA design verification assistant. "
+        f"You are {JUDGE_NAME}, an EDA design verification assistan, focus on syntax. "
         "Answer with YES or NO, followed by a brief justification."
     )
     user = (

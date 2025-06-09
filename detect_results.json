@@ -1,7 +1,7 @@
 {
   "pass_count": 21,
-  "total": 24,
-  "pass_rate": 87.5,
+  "total": 27,
+  "pass_rate": 77.77777777777779,
   "details": [
     {
       "index": 0,
@@ -87,27 +87,40 @@
     },
     {
       "index": 17,
-      "issues": []
+      "issues": [
+        {
+          "type": "CWE-347",
+          "message": "Function 'get_instance_names' accepts a signature parameter but doesn't use it for verification before sensitive operations",
+          "function": "get_instance_names",
+          "severity": "MEDIUM"
+        }
+      ]
     },
     {
       "index": 18,
-      "issues": []
+      "issues": [
+        {
+          "type": "CWE-347",
+          "message": "Function 'get_db_units_per_micron' accepts a signature parameter but doesn't use it for verification before sensitive operations",
+          "function": "get_db_units_per_micron",
+          "severity": "MEDIUM"
+        }
+      ]
     },
     {
       "index": 19,
-      "issues": []
+      "issues": [
+        {
+          "type": "CWE-347",
+          "message": "Function 'get_clearance_measure' accepts a signature parameter but doesn't use it for verification before sensitive operations",
+          "function": "get_clearance_measure",
+          "severity": "MEDIUM"
+        }
+      ]
     },
     {
       "index": 20,
-      "issues": [
-        {
-          "type": "CWE-74",
-          "function": "calibrate_net_cc",
-          "line": 19,
-          "message": "Improper Neutralization: User input appears to be used in output formatting without proper escaping or sanitization",
-          "severity": "HIGH"
-        }
-      ]
+      "issues": []
     },
     {
       "index": 21,
@@ -119,6 +132,26 @@
     },
     {
       "index": 23,
+      "issues": [
+        {
+          "type": "CWE-74",
+          "function": "calibrate_net_cc",
+          "line": 19,
+          "message": "Improper Neutralization: User input appears to be used in output formatting without proper escaping or sanitization",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "issues": []
+    },
+    {
+      "index": 25,
+      "issues": []
+    },
+    {
+      "index": 26,
       "issues": []
     }
   ]
