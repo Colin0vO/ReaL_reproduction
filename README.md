@@ -77,7 +77,13 @@ To reproduce our results:
    Create a `.env` file in the project root with the following content:
 
    ```ini
-   OPENAI_API_KEY=your_api_key_here
+    OPENAI_API_KEY="Your API key"
+    
+    # Set to false to disable anonymized telemetry
+    ANONYMIZED_TELEMETRY=true
+    
+    # LogLevel: Set to debug to enable verbose logging, set to result to get results only. Available: result | debug | info
+    BROWSER_USE_LOGGING_LEVEL=info
    ```
 
 4. **Run the full evaluation**
