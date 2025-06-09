@@ -2,6 +2,8 @@
 
 This is a GPU-friendly, easier reproduction repo for the viewer to reproduce our [ReaL on EDA](https://github.com/airevo2/ReaL_ON_EDA/tree/main?tab=readme-ov-file) result. 
 
+You only need to get an OpenAI API key to run our result.
+
 ---
 
 ## Overview
@@ -10,14 +12,14 @@ This repository helps the viewer to reproduce our results. It contains the outpu
 
 ---
 
-## Inputs
+## Instructions
 
 * **Prompt file:** `prompt.json`
   Contains the 27 task specifications and corresponding prompt instructions.
 
 ---
 
-## Outputs
+## Scripts output
 
 * **`exported_scripts/`**
   A folder containing the model’s generated OpenROAD scripts.
