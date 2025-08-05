@@ -44,7 +44,7 @@ This repository helps the viewer to reproduce our results. It contains the outpu
    * Result: 21/27 tasks passed → **77.78 % accuracy**
    * Detailed results are in `detect_results.json`.
 
-2. **EDA Model Outputt + Quality**
+2. **EDA Model Output + Quality**
 
    * Tool: `llm_judge_ability_test.py`
    * Result: 22/27 tasks passed → **81.48 % accuracy**
